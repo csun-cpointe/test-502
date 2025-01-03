@@ -13,13 +13,16 @@ aissemble-spark-history-chart:
                 port:
                   number: 18080
   serviceAccount:
-    name: irsa-history
+    name: test-irsa-502
     enabled: true
+    metadata:
+      annotations:
+        eks.amazonaws.com/role-arn: arn:aws:iam::440747251814:role/eks-pod-identity-role
 
 aissemble-thrift-server-chart:
   sparkConf: |
     spark.hadoop.fs.s3a.endpoint=s3.amazonaws.com
-    spark.hive.metastore.warehouse.dir=s3a://helloworld/spark-infrastructure/warehouse
+    spark.hive.metastore.warehouse.dir=s3a://aissemble-test/spark-infrastructure/warehouse
     spark.hadoop.fs.s3.impl=org.apache.hadoop.fs.s3a.S3AFileSystem
     spark.hive.server2.thrift.port=10000
     spark.hive.server2.thrift.http.port=10001
@@ -29,8 +32,11 @@ aissemble-thrift-server-chart:
     spark.hive.metastore.schema.verification=false
     spark.hive.metastore.uris=thrift://hive-metastore-service:9083/default
   serviceAccount:
-    name: irsa-thrift
+    name: test-irsa-502
     enabled: true
+    metadata:
+      annotations:
+        eks.amazonaws.com/role-arn: arn:aws:iam::440747251814:role/eks-pod-identity-role
 
 aissemble-hive-metastore-service-chart:
   configMap:
@@ -43,7 +49,7 @@ aissemble-hive-metastore-service-chart:
           value: hive
           description: Password to use against metastore database
         - name: metastore.warehouse.dir
-          value: s3a://helloworld/spark-infrastructure/warehouse
+          value: s3a://aissemble-test/spark-infrastructure/warehouse
         - name: fs.s3a.endpoint
           value: s3.amazonaws.com
         - name: fs.s3a.path.style.access

@@ -8,12 +8,12 @@ aissemble-spark-history-chart:
       enabled: false
 
     serviceAccount:
-      name: irsa-history
+      name: test-irsa
       enabled: true
 
 aissemble-thrift-server-chart:
     serviceAccount:
-      name: irsa-thrift
+      name: test-irsa
       enabled: true
 
 aissemble-hive-metastore-service-chart:
