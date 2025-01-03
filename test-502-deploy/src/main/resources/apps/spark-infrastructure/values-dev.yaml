@@ -1,0 +1,26 @@
+# This file contains the default values for the aiSSEMBLE Spark Infrastructure Helm chart.
+
+aissemble-spark-history-chart:
+    service:
+      type: LoadBalancer
+
+    ingress:
+      enabled: false
+
+    serviceAccount:
+      name: irsa-history
+      enabled: true
+
+aissemble-thrift-server-chart:
+    serviceAccount:
+      name: irsa-thrift
+      enabled: true
+
+aissemble-hive-metastore-service-chart:
+  mysql:
+    primary:
+      persistence:
+        enabled: false
+    secondary:
+      persistence:
+        enabled: false

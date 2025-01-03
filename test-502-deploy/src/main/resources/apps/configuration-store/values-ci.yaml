@@ -1,0 +1,7 @@
+# Add CI specific values here
+aissemble-configuration-store-chart:
+  configurationVolume:
+    accessModes:
+      - ReadWriteOnce
+    storageType: "custom"
+    storageClass: gp3

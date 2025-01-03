@@ -1,0 +1,6 @@
+# Add CI specific values here
+# Add CI specific values here
+aissemble-spark-operator-chart:
+  spark-operator:
+    sparkJobNamespaces:
+      - test-502
