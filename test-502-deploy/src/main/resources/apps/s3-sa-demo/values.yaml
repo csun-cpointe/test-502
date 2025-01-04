@@ -1,0 +1,11 @@
+replicaCount: 1
+hostname: s3-sa-demo
+image:
+  name: 25bobby/s3-sa-demo-docker
+  dockerRepo: ""
+  imagePullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "1.0.0-SNAPSHOT"
+
+serviceAccount:
+  name: test-irsa-502

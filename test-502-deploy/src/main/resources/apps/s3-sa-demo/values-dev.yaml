@@ -1,0 +1,6 @@
+image:
+  name: boozallen/s3-sa-demo-docker
+  dockerRepo: ""
+  imagePullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "1.1.0-SNAPSHOT"

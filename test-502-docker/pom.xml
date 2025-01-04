@@ -19,7 +19,7 @@
     <modules>
         <module>test-502-policy-decision-point-docker</module>
         <module>test-502-spark-worker-docker</module>
-
+<module>s3-sa-demo-docker</module>
         <!-- TODO: Add docker modules here -->
     </modules>
 
