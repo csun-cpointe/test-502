@@ -34,7 +34,7 @@ yaml = helm(
    values=['test-502-deploy/src/main/resources/apps/spark-infrastructure/values.yaml',
        'test-502-deploy/src/main/resources/apps/spark-infrastructure/values-dev.yaml']
 )
-k8s_yaml(yaml)
+k8s_yaml(yaml, allow_duplicates=True)
 yaml = helm(
    'test-502-deploy/src/main/resources/apps/policy-decision-point',
    name='policy-decision-point',

@@ -61,6 +61,28 @@
                             </image>
                         </images>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <id>default-build</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>push</goal>
+                            </goals>
+                            <configuration>
+                                <!-- Deploy will build all platforms, so skip build phase in this case: -->
+                                <buildArchiveOnly>true</buildArchiveOnly>
+                                <images>
+                                    <image>
+                                        <build>
+                                            <buildx>
+                                                <builderName>maven</builderName>
+                                            </buildx>
+                                        </build>
+                                    </image>
+                                </images>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
