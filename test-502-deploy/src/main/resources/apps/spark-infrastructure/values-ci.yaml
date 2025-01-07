@@ -19,9 +19,9 @@ aissemble-spark-history-chart:
   serviceAccount:
     name: test-irsa-502
     enabled: true
-    metadata:
-      annotations:
-        eks.amazonaws.com/role-arn: arn:aws:iam::440747251814:role/eks-pod-identity-role
+    #metadata:
+      #annotations:
+        #eks.amazonaws.com/role-arn: arn:aws:iam::440747251814:role/eks-pod-identity-role
 
 aissemble-thrift-server-chart:
   sparkConf: |
@@ -38,9 +38,9 @@ aissemble-thrift-server-chart:
   serviceAccount:
     name: test-irsa-502
     enabled: true
-    metadata:
-      annotations:
-        eks.amazonaws.com/role-arn: arn:aws:iam::440747251814:role/eks-pod-identity-role
+    #metadata:
+      #annotations:
+        #eks.amazonaws.com/role-arn: arn:aws:iam::440747251814:role/eks-pod-identity-role
   deployment:
     image:
       repository: "25bobby/aissemble-spark"
